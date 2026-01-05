@@ -11,137 +11,77 @@
       color:#222;
     }
     header{
-      background:#0b5ed7;
+      background:linear-gradient(135deg,#0b1220,#0f172a);
       color:#fff;
-      padding:25px 20px;
-    }
-    header h1{
-      margin:0;
-      font-size:32px;
-    }
-    header p{
-      margin:6px 0 0;
-      font-size:16px;
-      opacity:0.9;
+      padding:22px 20px;
+      display:flex;
+      align-items:center;
+      gap:15px;
     }
     nav{
-      background:#084298;
+      background:#0f172a;
       padding:10px 20px;
     }
     nav a{
-      color:#fff;
+      color:#e5e7eb;
       margin-right:18px;
       text-decoration:none;
       font-weight:600;
       font-size:14px;
     }
-    .container{
-      max-width:1100px;
-      margin:auto;
-      padding:30px 20px;
-    }
+    .container{max-width:1100px;margin:auto;padding:30px 20px;}
     .hero{
-      background:#ffffff;
+      background:#eef3f9;
       padding:30px;
-      border-radius:10px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
       display:grid;
-      grid-template-columns:1.2fr 0.8fr;
+      grid-template-columns:1.1fr 0.9fr;
       gap:25px;
+      overflow:hidden;
+      position:relative;
     }
-    .hero h2{
-      margin-top:0;
-      color:#0b5ed7;
+    .slide-content{
+      animation: slideIn 0.6s ease;
     }
-    .hero ul{
-      padding-left:18px;
+    @keyframes slideIn{
+      from{transform:translateX(60px);opacity:0;}
+      to{transform:translateX(0);opacity:1;}
     }
-    .hero li{
-      margin-bottom:8px;
+    .slide-img{
+      animation: slideImg 0.6s ease;
     }
-    .notice{
-      background:#e7f1ff;
-      border-left:5px solid #0b5ed7;
-      padding:15px;
-      margin:30px 0;
+    @keyframes slideImg{
+      from{transform:translateX(-60px);opacity:0;}
+      to{transform:translateX(0);opacity:1;}
+    }
+    .slide-actions a{
+      display:inline-block;
+      margin-top:12px;
+      margin-right:10px;
+      padding:10px 18px;
       border-radius:6px;
-      font-size:15px;
-    }
-    .services{
-      margin-top:30px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:18px;
-    }
-    .card{
-      background:#fff;
-      border:1px solid #e1e4e8;
-      border-radius:8px;
-      padding:18px;
-    }
-    .card h3{
-      margin-top:0;
-      font-size:17px;
-      color:#0b5ed7;
-    }
-    .info{
-      margin-top:40px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:20px;
-    }
-    .box{
-      background:#fff;
-      border:1px solid #e1e4e8;
-      border-radius:8px;
-      padding:20px;
-    }
-    .box h3{
-      margin-top:0;
-      color:#0b5ed7;
-    }
-    form input, form textarea{
-      width:100%;
-      padding:10px;
-      margin-bottom:10px;
-      border:1px solid #ccc;
-      border-radius:5px;
-      font-size:14px;
-    }
-    form button{
-      background:#25d366;
-      border:none;
-      padding:12px;
-      width:100%;
-      font-size:16px;
-      font-weight:bold;
-      cursor:pointer;
-      border-radius:6px;
-    }
-    footer{
-      margin-top:50px;
-      background:#0b5ed7;
-      color:#fff;
-      text-align:center;
-      padding:15px;
-      font-size:14px;
-    }
-    .whatsapp-float{
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      background:#25d366;
-      color:#000;
-      padding:12px 18px;
-      border-radius:30px;
-      font-weight:bold;
       text-decoration:none;
-      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+      font-weight:bold;
+      font-size:14px;
     }
+    .btn-call{background:#0b5ed7;color:#fff;}
+    .btn-wa{background:#25d366;color:#000;}
+    .notice{background:#e7f1ff;border-left:5px solid #0b5ed7;padding:15px;margin:30px 0;border-radius:6px;font-size:15px;}
+    .services{margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
+    .card{background:#fff;border:1px solid #e1e4e8;border-radius:8px;padding:18px;}
+    .card h3{margin-top:0;font-size:17px;color:#0b5ed7;}
+    .info{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+    .box{background:#fff;border:1px solid #e1e4e8;border-radius:8px;padding:20px;}
+    .box h3{margin-top:0;color:#0b5ed7;}
+    form input, form textarea{width:100%;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:5px;font-size:14px;}
+    form button{background:#25d366;border:none;padding:12px;width:100%;font-size:16px;font-weight:bold;cursor:pointer;border-radius:6px;}
+    footer{margin-top:50px;background:#0b1220;color:#fff;text-align:center;padding:15px;font-size:14px;}
+    .whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25d366;color:#000;padding:12px 18px;border-radius:30px;font-weight:bold;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.3);}
   </style>
 </head>
 <body><header style="display:flex;align-items:center;gap:15px;">
-  <img src="https://via.placeholder.com/70x70?text=LOGO" alt="Cyber Zone Logo" style="border-radius:8px;background:#fff;padding:5px;">
+  <img src="logo.png" alt="Cyber Zone Logo" style="height:60px; width:auto; border-radius:6px; background:#0b1220; padding:6px;">
   <div>
     <h1>Cyber Zone</h1>
     <p>Digital, Online & Government Services Center</p>
@@ -151,15 +91,19 @@
   <a href="#">Home</a>
   <a href="#services">Services</a>
   <a href="#contact">Contact</a>
-</nav><div class="container">  <div class="hero" style="background:#eef3f9;">
-  <div id="slider">
-    <h2 id="slideTitle" style="color:#0b5ed7;">Aadhaar & PAN Services</h2>
-    <p id="slideDesc">New Aadhaar, PAN Apply & Correction with proper guidance.</p>
-  </div>
-  <div>
-    <img id="slideImg" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837" style="width:100%;border-radius:8px;">
-  </div>
-</div>  <div class="notice">
+</nav><div class="container">  <div class="hero">
+    <div class="slide-content" id="slideText">
+      <h2 id="slideTitle" style="color:#0b5ed7;">Aadhaar & PAN Services</h2>
+      <p id="slideDesc">New Aadhaar, PAN Apply & Correction with proper guidance.</p>
+      <div class="slide-actions">
+        <a href="tel:8076186135" class="btn-call">Call Now</a>
+        <a href="https://wa.me/918076186135" target="_blank" class="btn-wa">WhatsApp</a>
+      </div>
+    </div>
+    <div class="slide-img">
+      <img id="slideImg" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837" style="width:100%;border-radius:10px;">
+    </div>
+  </div>  <div class="notice">
     ✔ Trusted Cyber Cafe Services &nbsp; | &nbsp; ✔ Fast Processing &nbsp; | &nbsp; ✔ Reasonable Charges
   </div>  <h2 id="services" style="color:#0b5ed7;">Our Services</h2>
   <div class="services">
@@ -205,6 +149,13 @@ var slides=[
 ];
 var i=0;
 function changeSlide(){
+  var text=document.getElementById('slideText');
+  var img=document.getElementById('slideImg');
+  text.classList.remove('slide-content');
+  img.parentElement.classList.remove('slide-img');
+  void text.offsetWidth;
+  text.classList.add('slide-content');
+  img.parentElement.classList.add('slide-img');
   document.getElementById('slideTitle').innerText=slides[i].title;
   document.getElementById('slideDesc').innerText=slides[i].desc;
   document.getElementById('slideImg').src=slides[i].img;
