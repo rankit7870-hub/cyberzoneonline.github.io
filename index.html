@@ -140,29 +140,26 @@
     }
   </style>
 </head>
-<body><header>
-  <h1>Cyber Zone</h1>
-  <p>Digital, Online & Government Services Center</p>
+<body><header style="display:flex;align-items:center;gap:15px;">
+  <img src="https://via.placeholder.com/70x70?text=LOGO" alt="Cyber Zone Logo" style="border-radius:8px;background:#fff;padding:5px;">
+  <div>
+    <h1>Cyber Zone</h1>
+    <p>Digital, Online & Government Services Center</p>
+  </div>
 </header>
 <nav>
   <a href="#">Home</a>
   <a href="#services">Services</a>
   <a href="#contact">Contact</a>
-</nav><div class="container">  <div class="hero">
-    <div>
-      <h2>Welcome to Cyber Zone</h2>
-      <p>We provide reliable and affordable digital & government related services at one place.</p>
-      <ul>
-        <li>Aadhaar, PAN, Voter ID Services</li>
-        <li>Passport & Government Forms</li>
-        <li>Online Applications & Corrections</li>
-        <li>Ticket Booking & Printing</li>
-      </ul>
-    </div>
-    <div>
-      <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837" alt="Cyber Cafe" style="width:100%; border-radius:8px;">
-    </div>
-  </div>  <div class="notice">
+</nav><div class="container">  <div class="hero" style="background:#eef3f9;">
+  <div id="slider">
+    <h2 id="slideTitle" style="color:#0b5ed7;">Aadhaar & PAN Services</h2>
+    <p id="slideDesc">New Aadhaar, PAN Apply & Correction with proper guidance.</p>
+  </div>
+  <div>
+    <img id="slideImg" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837" style="width:100%;border-radius:8px;">
+  </div>
+</div>  <div class="notice">
     ✔ Trusted Cyber Cafe Services &nbsp; | &nbsp; ✔ Fast Processing &nbsp; | &nbsp; ✔ Reasonable Charges
   </div>  <h2 id="services" style="color:#0b5ed7;">Our Services</h2>
   <div class="services">
@@ -200,6 +197,21 @@
 <footer>
   © 2025 Cyber Zone | Digital & Government Services
 </footer><script>
+var slides=[
+  {title:"Aadhaar & PAN Services",desc:"New Aadhaar, PAN Apply & Correction with proper guidance.",img:"https://images.unsplash.com/photo-1581092160562-40aa08e78837"},
+  {title:"Government Online Forms",desc:"All central & state government online applications.",img:"https://images.unsplash.com/photo-1556761175-5973dc0f32e7"},
+  {title:"Ticket Booking & Printing",desc:"Train, bus, flight booking with instant print.",img:"https://images.unsplash.com/photo-1521791136064-7986c2920216"},
+  {title:"Passport, PF & Ayushman",desc:"Passport apply, PF services & Ayushman card support.",img:"https://images.unsplash.com/photo-1522071820081-009f0129c71c"}
+];
+var i=0;
+function changeSlide(){
+  document.getElementById('slideTitle').innerText=slides[i].title;
+  document.getElementById('slideDesc').innerText=slides[i].desc;
+  document.getElementById('slideImg').src=slides[i].img;
+  i=(i+1)%slides.length;
+}
+setInterval(changeSlide,3000);
+
 function sendWhatsApp(){
   var name=document.getElementById('name').value;
   var mobile=document.getElementById('mobile').value;
