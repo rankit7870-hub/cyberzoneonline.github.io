@@ -1,174 +1,121 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cyber Zone | Digital & Government Services</title>
-  <style>
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:#f4f6f8;
-      color:#222;
-    }
-    header{
-      background:linear-gradient(135deg,#0b1220,#0f172a);
-      color:#fff;
-      padding:22px 20px;
-      display:flex;
-      align-items:center;
-      gap:15px;
-    }
-    nav{
-      background:#0f172a;
-      padding:10px 20px;
-    }
-    nav a{
-      color:#e5e7eb;
-      margin-right:18px;
-      text-decoration:none;
-      font-weight:600;
-      font-size:14px;
-    }
-    .container{max-width:1100px;margin:auto;padding:30px 20px;}
-    .hero{
-      background:#eef3f9;
-      padding:30px;
-      border-radius:12px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.08);
-      display:grid;
-      grid-template-columns:1.1fr 0.9fr;
-      gap:25px;
-      overflow:hidden;
-      position:relative;
-    }
-    .slide-content{
-      animation: slideIn 0.6s ease;
-    }
-    @keyframes slideIn{
-      from{transform:translateX(60px);opacity:0;}
-      to{transform:translateX(0);opacity:1;}
-    }
-    .slide-img{
-      animation: slideImg 0.6s ease;
-    }
-    @keyframes slideImg{
-      from{transform:translateX(-60px);opacity:0;}
-      to{transform:translateX(0);opacity:1;}
-    }
-    .slide-actions a{
-      display:inline-block;
-      margin-top:12px;
-      margin-right:10px;
-      padding:10px 18px;
-      border-radius:6px;
-      text-decoration:none;
-      font-weight:bold;
-      font-size:14px;
-    }
-    .btn-call{background:#0b5ed7;color:#fff;}
-    .btn-wa{background:#25d366;color:#000;}
-    .notice{background:#e7f1ff;border-left:5px solid #0b5ed7;padding:15px;margin:30px 0;border-radius:6px;font-size:15px;}
-    .services{margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
-    .card{background:#fff;border:1px solid #e1e4e8;border-radius:8px;padding:18px;}
-    .card h3{margin-top:0;font-size:17px;color:#0b5ed7;}
-    .info{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
-    .box{background:#fff;border:1px solid #e1e4e8;border-radius:8px;padding:20px;}
-    .box h3{margin-top:0;color:#0b5ed7;}
-    form input, form textarea{width:100%;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:5px;font-size:14px;}
-    form button{background:#25d366;border:none;padding:12px;width:100%;font-size:16px;font-weight:bold;cursor:pointer;border-radius:6px;}
-    footer{margin-top:50px;background:#0b1220;color:#fff;text-align:center;padding:15px;font-size:14px;}
-    .whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25d366;color:#000;padding:12px 18px;border-radius:30px;font-weight:bold;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.3);}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Zone | Online & Government Services</title>
+<style>
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{font-family:Arial, Helvetica, sans-serif; background:#111; color:#fff; scroll-behavior:smooth;}/* Header */ header{ display:flex; align-items:center; justify-content:space-between; padding:15px 50px; background: linear-gradient(90deg,#0f2027,#203a43); position: sticky; top:0; z-index:1000; } header img{height:60px;} header .title{color:#d48cff;} header .title h1{font-size:32px; margin-bottom:5px;} header .title p{font-size:14px; color:#fff;}
+
+/* Hero Section */ .hero{position:relative; height:500px; overflow:hidden;} .hero video{width:100%; height:100%; object-fit:cover; filter:brightness(0.6);} .hero-content{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; color:#fff; z-index:2;} .hero-content h1{font-size:48px; color:#ffdf6c; margin-bottom:10px;} .hero-content p{font-size:20px;}
+
+/* Slider */ .slider{position:relative; overflow:hidden; max-width:1100px; margin:40px auto; border-radius:15px;} .slides{display:flex; transition:transform 0.7s ease-in-out;} .slide{min-width:100%; position:relative; display:flex; align-items:center; justify-content:center; background:#203a43; border-radius:15px; padding:40px; gap:20px;} .slide img.pc{width:300px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.5);} .slide .content{max-width:600px; color:#fff;} .slide .content h2{font-size:28px; color:#ffdf6c; margin-bottom:10px;} .slide .content p{font-size:16px; line-height:1.5;}
+
+/* Services */ .container{max-width:1100px; margin:auto; padding:20px;} .services{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;} .card{background: linear-gradient(135deg,#203a43,#2c5364); padding:20px; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.5); transition:0.3s; cursor:pointer;} .card:hover{transform:translateY(-10px); box-shadow:0 10px 30px rgba(0,0,0,0.7);} .card h3{color:#ffdf6c; margin-bottom:10px;} .card p{font-size:14px; color:#fff;}
+
+/* Testimonials */ .testimonials{max-width:1100px; margin:50px auto;} .testimonial{background:#0f2027; padding:20px; margin:10px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.5); transition:0.3s;} .testimonial p{font-style:italic; color:#fff;} .testimonial h4{margin-top:10px; color:#ffdf6c;}
+
+/* FAQ */ .faq{max-width:1100px; margin:50px auto;} .faq-item{background:#203a43; margin-bottom:10px; border-radius:12px; padding:15px; cursor:pointer;} .faq-item h3{color:#ffdf6c;} .faq-item p{display:none; margin-top:10px; color:#fff;}
+
+/* Info Section */ .info{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; margin:40px 0;} .info-box{background: linear-gradient(135deg,#0f2027,#203a43); padding:20px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.5); transition:0.3s; opacity:0; transform:translateY(50px);} .info-box h3{color:#ffdf6c; margin-bottom:10px;} .info-box p{font-size:14px; line-height:1.5; color:#fff;} .info-box iframe{border-radius:12px;}
+
+/* Contact */ .contact{text-align:center; margin:50px 0; opacity:0; transform:translateY(50px); transition:0.5s;} .contact h2{color:#d48cff; margin-bottom:15px;} .btn{display:inline-block; margin:10px; padding:12px 25px; border-radius:30px; font-weight:bold; text-decoration:none; transition:0.3s;} .btn.call{background:#007bff; color:#fff;} .btn.call:hover{background:#0056b3;} .btn.whatsapp{background:#25d366; color:#000;} .btn.whatsapp:hover{background:#128c7e;}
+
+/* Floating WhatsApp */ .floating-whatsapp{position:fixed; bottom:20px; right:20px; z-index:1000;}
+
+/* Footer */ footer{text-align:center; padding:20px; background:#0f2027; color:#fff;}
+
+/* Animations */ .show{opacity:1 !important; transform:translateY(0) !important;} </style>
+
 </head>
-<body><header style="display:flex;align-items:center;gap:15px;">
-  <img src="logo.png" alt="Cyber Zone Logo" style="height:60px; width:auto; border-radius:6px; background:#0b1220; padding:6px;">
-  <div>
+<body><!-- Header --><header>
+  <img src="images/logo.png" alt="Cyber Zone Logo">
+  <div class="title">
     <h1>Cyber Zone</h1>
     <p>Digital, Online & Government Services Center</p>
   </div>
-</header>
-<nav>
-  <a href="#">Home</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
-</nav><div class="container">  <div class="hero">
-    <div class="slide-content" id="slideText">
-      <h2 id="slideTitle" style="color:#0b5ed7;">Aadhaar & PAN Services</h2>
-      <p id="slideDesc">New Aadhaar, PAN Apply & Correction with proper guidance.</p>
-      <div class="slide-actions">
-        <a href="tel:8076186135" class="btn-call">Call Now</a>
-        <a href="https://wa.me/918076186135" target="_blank" class="btn-wa">WhatsApp</a>
-      </div>
+</header><!-- Hero --><div class="hero">
+  <video autoplay muted loop>
+    <source src="images/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content">
+    <h1>Welcome to Cyber Zone</h1>
+    <p>Fast & Trusted Online & Government Services</p>
+  </div>
+</div><!-- Slider --><div class="slider">
+  <div class="slides">
+    <div class="slide">
+      <img src="images/aadhaar.png" class="pc" alt="Aadhaar">
+      <div class="content"><h2>Aadhaar Card</h2><p>New Aadhaar & Correction Services.</p></div>
     </div>
-    <div class="slide-img">
-      <img id="slideImg" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837" style="width:100%;border-radius:10px;">
+    <div class="slide">
+      <img src="images/pan.png" class="pc" alt="PAN">
+      <div class="content"><h2>PAN Card</h2><p>New & Correction.</p></div>
     </div>
-  </div>  <div class="notice">
-    ✔ Trusted Cyber Cafe Services &nbsp; | &nbsp; ✔ Fast Processing &nbsp; | &nbsp; ✔ Reasonable Charges
-  </div>  <h2 id="services" style="color:#0b5ed7;">Our Services</h2>
+    <div class="slide">
+      <img src="images/passport.png" class="pc" alt="Passport">
+      <div class="content"><h2>Passport</h2><p>New & Data Correction.</p></div>
+    </div>
+    <div class="slide">
+      <img src="images/tickets.png" class="pc" alt="Tickets">
+      <div class="content"><h2>Tickets Booking</h2><p>Train, Flight & Bus Tickets.</p></div>
+    </div>
+  </div>
+</div><!-- Services --><div class="container">
   <div class="services">
-    <div class="card"><h3>Aadhaar Card</h3><p>New Aadhaar & Correction</p></div>
-    <div class="card"><h3>PAN Card</h3><p>Apply & Correction</p></div>
-    <div class="card"><h3>Voter ID</h3><p>New & Update</p></div>
-    <div class="card"><h3>Passport</h3><p>Application & Support</p></div>
-    <div class="card"><h3>PF Services</h3><p>KYC, Withdrawal</p></div>
-    <div class="card"><h3>Online Forms</h3><p>All Govt. Forms</p></div>
-    <div class="card"><h3>Ticket Booking</h3><p>Train / Bus / Flight</p></div>
-    <div class="card"><h3>Printing & Scanning</h3><p>All Types</p></div>
-  </div>  <div class="info">
-    <div class="box">
-      <h3>Address</h3>
-      <p>Block A, Gali No. 9<br>Vatika Kunj<br>Near Radha Krishna Mandir</p>
-    </div>
-    <div class="box">
-      <h3>Working Hours</h3>
-      <p>Monday – Saturday<br>10:00 AM – 7:00 PM</p>
-    </div>
-    <div class="box" id="contact">
-      <h3>Enquiry / Contact</h3>
-      <form onsubmit="event.preventDefault();sendWhatsApp();">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="tel" id="mobile" placeholder="Mobile Number" required>
-        <textarea id="msg" placeholder="Your Requirement" required></textarea>
-        <button type="submit">Send on WhatsApp</button>
-      </form>
-    </div>
-  </div>  <div class="box" style="margin-top:30px;">
-    <h3>Location</h3>
-    <iframe src="https://www.google.com/maps?q=Block%20A%20Gali%20No%209%20Vatika%20Kunj%20Near%20Radha%20Krishna%20Mandir&output=embed" width="100%" height="280" style="border:0; border-radius:8px;" loading="lazy"></iframe>
-  </div></div><a class="whatsapp-float" href="https://wa.me/918076186135" target="_blank">WhatsApp</a>
+    <div class="card"><h3>PF Services</h3><p>PF Withdrawal, KYC & Correction.</p></div>
+    <div class="card"><h3>Ayushman Card</h3><p>Ayushman Bharat Card Services.</p></div>
+    <div class="card"><h3>Design Services</h3><p>Wedding, Birthday & Digital Invitations.</p></div>
+    <div class="card"><h3>Biodata / Resume</h3><p>Professional Resume & Biodata Making.</p></div>
+    <div class="card"><h3>Online Forms</h3><p>All Government & Private Online Forms.</p></div>
+  </div>
+</div><!-- Testimonials --><div class="container testimonials">
+  <div class="testimonial"><p>Great services, fast and reliable!</p><h4>- Rajesh Kumar</h4></div>
+  <div class="testimonial"><p>Highly recommend Cyber Zone for PAN & Aadhaar services.</p><h4>- Sneha Sharma</h4></div>
+  <div class="testimonial"><p>Very professional and trustworthy staff.</p><h4>- Amit Verma</h4></div>
+</div><!-- FAQ --><div class="container faq">
+  <div class="faq-item"><h3>How to apply for Aadhaar?</h3><p>You can apply online or visit Cyber Zone for guidance.</p></div>
+  <div class="faq-item"><h3>Can I correct PAN details?</h3><p>Yes, we provide complete PAN correction services.</p></div>
+  <div class="faq-item"><h3>Do you help with Passport?</h3><p>Yes, we guide for new passports and corrections.</p></div>
+</div><!-- Info Section --><div class="container info">
+  <div class="info-box">
+    <h3>🗺️ Location</h3>
+    <iframe src="https://www.google.com/maps?q=Block%20A%20Gali%20No%209%20Vatika%20Kunj%20Near%20Radha%20Krishna%20Mandir&output=embed" width="100%" height="250" allowfullscreen loading="lazy"></iframe>
+  </div>
+  <div class="info-box">
+    <h3>📍 Address</h3>
+    <p>Cyber Zone, Block A, Gali No. 9, Vatika Kunj, Near Radha Krishna Mandir</p>
+  </div>
+  <div class="info-box">
+    <h3>🕒 Working Hours</h3>
+    <p>Monday – Saturday<br>10:00 AM – 7:00 PM</p>
+  </div>
+</div><!-- Contact --><div class="contact">
+  <h2>Contact Us</h2>
+  <a class="btn call" href="tel:8076186135">Call Now</a>
+  <a class="btn whatsapp" href="https://wa.me/918076186135" target="_blank">WhatsApp Chat</a>
+</div><!-- Floating WhatsApp --><a href="https://wa.me/918076186135" target="_blank" class="floating-whatsapp">
+  <img src="images/whatsapp.png" alt="WhatsApp" style="height:60px;">
+</a><!-- Footer --><footer>© 2025 Cyber Zone | All Online & Government Services Available</footer><script>
+  // Slider
+  const slides = document.querySelector('.slides');
+  const total = document.querySelectorAll('.slide').length;
+  let index = 0;
+  setInterval(()=>{index++; if(index>=total) index=0; slides.style.transform=`translateX(-${index*100}%)`;},3000);
 
-<footer>
-  © 2025 Cyber Zone | Digital & Government Services
-</footer><script>
-var slides=[
-  {title:"Aadhaar & PAN Services",desc:"New Aadhaar, PAN Apply & Correction with proper guidance.",img:"https://images.unsplash.com/photo-1581092160562-40aa08e78837"},
-  {title:"Government Online Forms",desc:"All central & state government online applications.",img:"https://images.unsplash.com/photo-1556761175-5973dc0f32e7"},
-  {title:"Ticket Booking & Printing",desc:"Train, bus, flight booking with instant print.",img:"https://images.unsplash.com/photo-1521791136064-7986c2920216"},
-  {title:"Passport, PF & Ayushman",desc:"Passport apply, PF services & Ayushman card support.",img:"https://images.unsplash.com/photo-1522071820081-009f0129c71c"}
-];
-var i=0;
-function changeSlide(){
-  var text=document.getElementById('slideText');
-  var img=document.getElementById('slideImg');
-  text.classList.remove('slide-content');
-  img.parentElement.classList.remove('slide-img');
-  void text.offsetWidth;
-  text.classList.add('slide-content');
-  img.parentElement.classList.add('slide-img');
-  document.getElementById('slideTitle').innerText=slides[i].title;
-  document.getElementById('slideDesc').innerText=slides[i].desc;
-  document.getElementById('slideImg').src=slides[i].img;
-  i=(i+1)%slides.length;
-}
-setInterval(changeSlide,3000);
+  // FAQ toggle
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    item.addEventListener('click',()=>{
+      const p = item.querySelector('p');
+      p.style.display = p.style.display==='block'?'none':'block';
+    });
+  });
 
-function sendWhatsApp(){
-  var name=document.getElementById('name').value;
-  var mobile=document.getElementById('mobile').value;
-  var msg=document.getElementById('msg').value;
-  var text=`Enquiry from Website%0AName: ${name}%0AMobile: ${mobile}%0ARequirement: ${msg}`;
-  window.open(`https://wa.me/918076186135?text=${text}`,'_blank');
-}
+  // Scroll animation
+  const boxes = document.querySelectorAll('.info-box, .contact, .testimonial');
+  window.addEventListener('scroll',()=>{
+    const trigger = window.innerHeight*0.85;
+    boxes.forEach(box=>{const top=box.getBoundingClientRect().top;if(top<trigger) box.classList.add('show');});
+  });
 </script></body>
 </html>
